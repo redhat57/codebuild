@@ -8,7 +8,6 @@ phases:
       - pip3 install awscli --upgrade --user
       - export DATE=`date +%Y%m%d%H%M`
       - echo $DATE
-      - apt-get install mysql
       - mysql --version
   build:
     commands:
