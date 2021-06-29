@@ -3,20 +3,20 @@ phases:
   install:
     runtime-versions:
       python: 3.7
-pre_build:
-  commands:
-    - pip3 install awscli --upgrade --user
-    - export DATE=`date +%Y%m%d%H%M`
-    - echo $DATE
-    - apt-get install mysql
-    - mysql --version
-build:
-  commands:
-    - echo Build started on `date`
-    - echo proceed db connection to $ENDPOINT
-    - echo proceed db migrate update, DDL proceed here
-    - echo proceed application test, CRUD test run here
-post_build:
-  commands:
-    - echo Build completed on `date`
-    - echo $NAME
+  pre_build:
+    commands:
+      - pip3 install awscli --upgrade --user
+      - export DATE=`date +%Y%m%d%H%M`
+      - echo $DATE
+      - apt-get install mysql
+      - mysql --version
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo proceed db connection to $ENDPOINT
+      - echo proceed db migrate update, DDL proceed here
+      - echo proceed application test, CRUD test run here
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo $NAME
